@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using HygieiaData;
+using HygieiaData.Models;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
 namespace Hygieia.Controllers
@@ -8,10 +10,11 @@ namespace Hygieia.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
+        private readonly Repository<User> _userRepository;
+        public HomeController(ILogger<HomeController> logger, Repository<User> userRepository)
         {
             _logger = logger;
+            _userRepository = userRepository;
         }
 
         [HttpGet]

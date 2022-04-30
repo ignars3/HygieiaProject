@@ -1,12 +1,16 @@
+using HygieiaData;
+using HygieiaData.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using MySqlConnector;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,6 +36,19 @@ namespace Hygieia
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Hygieia", Version = "v1" });
             });
+
+            var builder = new MySqlConnectionStringBuilder(Configuration.GetConnectionString("DefaultConnection"));
+            builder.UserID = "root";
+
+            services.AddDbContext<DataContext>(
+                options => options.UseMySql(
+                    builder.ConnectionString,
+                    new MySqlServerVersion(new Version(8, 0)),
+                    x => x.MigrationsAssembly("HygieiaData")
+                )
+            );
+
+            services.AddTransient<Repository<User>>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
