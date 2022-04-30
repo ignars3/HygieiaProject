@@ -4,14 +4,14 @@
     "D:\\LNU\\HygieiaProject\\Hygieia\\Hygieia.csproj": {}
   },
   "projects": {
-    "D:\\LNU\\HygieiaProject\\Hygieia\\Hygieia.csproj": {
+    "D:\\LNU\\HygieiaProject\\HygieiaData\\HygieiaData.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\LNU\\HygieiaProject\\Hygieia\\Hygieia.csproj",
-        "projectName": "Hygieia",
-        "projectPath": "D:\\LNU\\HygieiaProject\\Hygieia\\Hygieia.csproj",
+        "projectUniqueName": "D:\\LNU\\HygieiaProject\\HygieiaData\\HygieiaData.csproj",
+        "projectName": "HygieiaData",
+        "projectPath": "D:\\LNU\\HygieiaProject\\HygieiaData\\HygieiaData.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "D:\\LNU\\HygieiaProject\\Hygieia\\obj\\",
+        "outputPath": "D:\\LNU\\HygieiaProject\\HygieiaData\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -40,6 +40,74 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.16, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\LNU\\HygieiaProject\\Hygieia\\Hygieia.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\LNU\\HygieiaProject\\Hygieia\\Hygieia.csproj",
+        "projectName": "Hygieia",
+        "projectPath": "D:\\LNU\\HygieiaProject\\Hygieia\\Hygieia.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "D:\\LNU\\HygieiaProject\\Hygieia\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "D:\\LNU\\HygieiaProject\\HygieiaData\\HygieiaData.csproj": {
+                "projectPath": "D:\\LNU\\HygieiaProject\\HygieiaData\\HygieiaData.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Pomelo.EntityFrameworkCore.MySql": {
+              "target": "Package",
+              "version": "[5.0.4, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[5.6.3, )"
