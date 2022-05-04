@@ -9,3 +9,4 @@ D:\LNU\HygieiaProject\HygieiaData\obj\Debug\net5.0\HygieiaData.csproj.CoreCompil
 D:\LNU\HygieiaProject\HygieiaData\obj\Debug\net5.0\HygieiaData.dll
 D:\LNU\HygieiaProject\HygieiaData\obj\Debug\net5.0\ref\HygieiaData.dll
 D:\LNU\HygieiaProject\HygieiaData\obj\Debug\net5.0\HygieiaData.pdb
+D:\LNU\HygieiaProject\HygieiaData\obj\Debug\net5.0\HygieiaData.csproj.AssemblyReference.cache
