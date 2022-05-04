@@ -1,5 +1,7 @@
+using Hygieia.Services;
 using HygieiaData;
 using HygieiaData.Models;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -9,11 +11,13 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using MySqlConnector;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace Hygieia
@@ -30,15 +34,30 @@ namespace Hygieia
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+                    .AddJwtBearer(options =>
+                    {
+                        options.RequireHttpsMetadata = false;
+                        options.TokenValidationParameters = new TokenValidationParameters
+                        {
+                            ValidateIssuer = true,
+                            ValidIssuer = AuthorizationService.ISSUER,
 
-            services.AddControllers();
-            services.AddSwaggerGen(c =>
+                            ValidateAudience = true,
+                            ValidAudience = AuthorizationService.AUDIENCE,
+
+                            ValidateLifetime = true,
+                            ClockSkew = TimeSpan.FromMinutes(AuthorizationService.LIFETIME),
+
+                            ValidateIssuerSigningKey = true,
+                            IssuerSigningKey = AuthorizationService.GetSymmetricSecurityKey()
+                        };
+                    });
+
+            var builder = new MySqlConnectionStringBuilder(Configuration.GetConnectionString("DefaultConnection"))
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Hygieia", Version = "v1" });
-            });
-
-            var builder = new MySqlConnectionStringBuilder(Configuration.GetConnectionString("DefaultConnection"));
-            builder.UserID = "root";
+                UserID = "root"
+            };
 
             services.AddDbContext<DataContext>(
                 options => options.UseMySql(
@@ -48,7 +67,14 @@ namespace Hygieia
                 )
             );
 
-            services.AddTransient<Repository<User>>();
+            services.AddControllers();
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Hygieia", Version = "v1" });
+            });
+
+            services.AddScoped<IAuthorizationService, AuthorizationService>();
+            services.AddScoped<Repository<User>>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -65,6 +91,7 @@ namespace Hygieia
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

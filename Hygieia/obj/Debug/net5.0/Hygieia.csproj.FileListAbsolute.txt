@@ -65,3 +65,10 @@ D:\LNU\HygieiaProject\Hygieia\obj\Debug\net5.0\Hygieia.dll
 D:\LNU\HygieiaProject\Hygieia\obj\Debug\net5.0\ref\Hygieia.dll
 D:\LNU\HygieiaProject\Hygieia\obj\Debug\net5.0\Hygieia.pdb
 D:\LNU\HygieiaProject\Hygieia\obj\Debug\net5.0\Hygieia.genruntimeconfig.cache
+D:\LNU\HygieiaProject\Hygieia\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\LNU\HygieiaProject\Hygieia\bin\Debug\net5.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\LNU\HygieiaProject\Hygieia\bin\Debug\net5.0\Microsoft.IdentityModel.Logging.dll
+D:\LNU\HygieiaProject\Hygieia\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.dll
+D:\LNU\HygieiaProject\Hygieia\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\LNU\HygieiaProject\Hygieia\bin\Debug\net5.0\Microsoft.IdentityModel.Tokens.dll
+D:\LNU\HygieiaProject\Hygieia\bin\Debug\net5.0\System.IdentityModel.Tokens.Jwt.dll
