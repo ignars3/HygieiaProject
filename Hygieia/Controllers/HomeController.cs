@@ -1,4 +1,5 @@
-﻿using Hygieia.Services;
+﻿using Hygieia.Models;
+using Hygieia.Services;
 using HygieiaData;
 using HygieiaData.Models;
 using Microsoft.AspNetCore.Mvc;
@@ -7,7 +8,7 @@ using Microsoft.Extensions.Logging;
 namespace Hygieia.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
@@ -19,17 +20,25 @@ namespace Hygieia.Controllers
             _authorizationService = authorizationService;
         }
 
-        [HttpPost]
-        public string Login(string username, string password)
+        [Route("Test")]
+        [HttpGet]
+        public string Test()
         {
-            string token = _authorizationService.GetToken(username, password);
+            return "Vova";
+        }
+
+        [Route("login")]
+        [HttpPost]
+        public IActionResult Login([FromBody] LoginModel loginModel)
+        {
+            string token = _authorizationService.GetToken(loginModel.Username, loginModel.Password);
 
             if (token == null)
             {
-                return "An error occured";
+                return Unauthorized();
             }
 
-            return token;
+            return Ok(new { access_token = token });
         }
     }
 }
