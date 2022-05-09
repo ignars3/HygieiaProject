@@ -56,7 +56,8 @@ namespace Hygieia
 
             var builder = new MySqlConnectionStringBuilder(Configuration.GetConnectionString("DefaultConnection"))
             {
-                UserID = "root"
+                UserID = "root",
+                Password = "Ignars3"
             };
 
             services.AddDbContext<DataContext>(
@@ -66,6 +67,15 @@ namespace Hygieia
                     x => x.MigrationsAssembly("HygieiaData")
                 )
             );
+
+            services.AddCors(options =>
+            {
+                options.AddDefaultPolicy(
+                    builder =>
+                    {
+                        builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
+                    });
+            });
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
@@ -88,7 +98,7 @@ namespace Hygieia
             }
 
             app.UseHttpsRedirection();
-
+            app.UseCors();
             app.UseRouting();
 
             app.UseAuthentication();
