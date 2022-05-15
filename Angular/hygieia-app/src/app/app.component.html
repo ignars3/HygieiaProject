@@ -2,24 +2,9 @@
 
   <div class="topnav">
     <a [routerLink]="['']" routerLinkActive='active' [routerLinkActiveOptions]="{exact: true}">Home</a>
-    <a [routerLink]="['/orders']" routerLinkActive='active' [routerLinkActiveOptions]="{exact: true}" *ngIf='isLoggedIn'>Orders</a>
+    <a [routerLink]="['/login']" routerLinkActive='active' [routerLinkActiveOptions]="{exact: true}" *ngIf='isLoggedIn'>Login</a>
+    <a [routerLink]="['/login']" routerLinkActive='active' [routerLinkActiveOptions]="{exact: true}" *ngIf='isLoggedIn'>Profile</a>
   </div>
 
-  <mat-card *ngIf="!isLoggedIn">
-    <mat-form-field class="example-form-field">
-      <mat-label>Username</mat-label>
-      <input type="username" matInput placeholder="Username" #username>
-    </mat-form-field>
-    <mat-form-field class="example-form-field">
-      <mat-label>Password</mat-label>
-      <input type="password" matInput #password>
-    </mat-form-field>
-    <button mat-flat-button color="primary" (click)='login(username.value, password.value)'>Login</button>
-  </mat-card>
-
-  <mat-card *ngIf="isLoggedIn">
-    <button mat-flat-button color="primary" (click)='logout()'>Logout</button>
-  </mat-card>
-  
   <router-outlet></router-outlet>
 </div>
