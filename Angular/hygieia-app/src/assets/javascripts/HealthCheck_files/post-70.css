@@ -324,7 +324,7 @@
 }
 .wpcf7-form span.email-menu:before,
 .wpcf7-form span.hear-about:before {
-    content: "\e92a";
+    content: "<";
     font-family: eicons;
     font-size: 15px;
     position: absolute;

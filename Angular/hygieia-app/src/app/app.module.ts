@@ -15,6 +15,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatTableModule } from '@angular/material/table';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { HomeComponent } from './home/home.component';
+import { AuthorizationComponent } from './authorization/authorization.component';
+import { ProfileComponent } from './profile/profile.component';
 
 export function tokenGetter() {
   return localStorage.getItem(TOKEN_KEY);
@@ -23,7 +25,9 @@ export function tokenGetter() {
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    AuthorizationComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,

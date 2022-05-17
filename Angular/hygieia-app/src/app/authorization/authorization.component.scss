@@ -1,0 +1,84 @@
+.l-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 100px 0px;
+  width: 55%;
+}
+
+.mat-form-field {
+  width: 100%;
+  min-width: 300px;
+}
+
+mat-card-title {
+  display: flex;
+  justify-content: center;
+  font-size: 24px;
+}
+
+mat-card-content {
+  display: flex;
+  justify-content: center;
+  font-size: 18px;
+}
+
+.button-wrap {
+  font-size: 20px !important;
+  background-color: whitesmoke;
+  color: black;
+}
+
+.button-wrap:hover {
+  font-size: 20px !important;
+  background-color: green;
+  color: whitesmoke;
+}
+
+.error {
+  width: 300px;
+  color: red;
+}
+
+.button {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.infinity-image-container {
+  background: url(../../assets/doctor.jpg) center no-repeat;
+  background-size: cover;
+  opacity: 0.9; 
+}
+
+.row {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+  height: 907px;
+  width: 100%;
+}
+
+.col-lg-6 {
+  flex: 0 0 45%;
+  max-width: 50%;
+}
+
+.message-box {
+  padding: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.message-text {
+  font-size: 17px;
+}
+
+.change-text {
+  font-size: 18px;
+  margin-left: 4px;
+}

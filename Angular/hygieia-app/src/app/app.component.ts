@@ -15,13 +15,6 @@ export class AppComponent {
     return this.as.isAuthenticated()
   }
 
-  login(username: string, password: string) {
-    this.as.login(username, password).subscribe(res => {
-      }, error => {
-        alert('Wrong login or password' + error)
-      })
-  }
-
   logout() {
     this.as.logout()
   }
