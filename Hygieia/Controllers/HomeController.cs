@@ -20,13 +20,6 @@ namespace Hygieia.Controllers
             _authorizationService = authorizationService;
         }
 
-        [Route("Test")]
-        [HttpGet]
-        public string Test()
-        {
-            return "Vova";
-        }
-
         [Route("login")]
         [HttpPost]
         public IActionResult Login([FromBody] LoginModel loginModel)

@@ -1,0 +1,72 @@
+
+<div class="row">
+  <div class="col-lg-6 col-md-6 d-none d-md-block infinity-image-container"> 
+
+  </div>
+    <div class="l-menu">
+      <div>
+        <mat-card>
+          <mat-card-title>{{ headerText }}</mat-card-title>
+          <mat-card-content>
+            <div>
+              <p *ngIf="!isLogin">
+                <mat-form-field>
+                  <input type="text" required matInput placeholder="First Name" #firstName>
+                </mat-form-field>
+              </p>
+              
+              <p *ngIf="!isLogin">
+                <mat-form-field>
+                  <input type="text" required matInput placeholder="Second Name" #secondName>
+                </mat-form-field>
+              </p>
+
+              <p *ngIf="!isLogin">
+                <mat-form-field>
+                  <input type="text" required matInput placeholder="Phone" #phone>
+                </mat-form-field>
+              </p>
+
+              <p *ngIf="!isLogin">
+                <mat-form-field>
+                  <input type="text" required matInput placeholder="Address" #address>
+                </mat-form-field>
+              </p>
+
+              <p>
+                <mat-form-field>
+                  <input type="text" required matInput placeholder="Email" #username>
+                </mat-form-field>
+              </p>
+
+              <p>
+                <mat-form-field>
+                  <input type="password" required matInput placeholder="Password" #password>
+                </mat-form-field>
+              </p>
+
+              <p *ngIf="errorMessage != ''" class="error">
+                {{ errorMessage }}
+              </p>
+
+              <div class="button" *ngIf="isLogin">
+                <button (click)='login(username.value, password.value)' mat-button class="button-wrap">{{ authNotText }}</button>
+              </div>
+              
+              <div class="button" *ngIf="!isLogin">
+                <button (click)='register(username.value, password.value)' mat-button class="button-wrap">{{ authNotText }}</button>
+              </div>
+
+            </div>
+          </mat-card-content>
+        </mat-card>
+
+      <div class="message-box">
+        <p class="message-text">
+          <span>{{ messageText }}</span>
+          <button mat-button class="change-text" (click)="changeLogin()"> {{ authText }}</button>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

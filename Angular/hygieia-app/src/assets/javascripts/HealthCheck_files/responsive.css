@@ -1,0 +1,494 @@
+/* --------------------------------------------------
+	Responsive Styles
+
+
+
+---------------- TABLE OF CONTENTS ------------------
+
+	1.0 Navigation
+	2.0 Header/Page Title
+	3.0 Footers
+	4.0 Features
+
+		4.1 Feature Box
+		4.2 Feature - Cards
+		4.3 Feature - Cards 2
+		4.4 Feature - Steps Numbers
+		4.5 Feature - Box Hover
+		4.6 Feature - Image Hover
+		4.7 Feature - Link Cards
+
+	5.0 Team Layouts
+	6.0 Testimonials
+	7.0 Pricing Tables
+	8.0 CTA - Call to Action
+	X.X Portfolio
+	9.0 Contact Pages
+
+		9.1 Contact Layout 1
+		9.2 Contact Layout 2
+		9.3 Contact Layout 3
+		9.4 Contact Layout 4
+
+	10.0 Blog Post/s
+	11.0 404 Page
+
+--------------- END - TABLE OF CONTENTS ------------- */
+/* --------------------------------------------------
+	1.0 Navigation
+-------------------------------------------------- */
+@media (max-width: 1260px) {
+  .navbar .navbar-header {
+    width: auto;
+    margin-left: 0; }
+    .navbar .navbar-header .navbar-brand {
+      margin-left: 25px; }
+    .navbar .navbar-header .navbar-toggle {
+      display: block;
+      position: relative;
+      width: 22px;
+      height: 14px;
+      border: none;
+      background: none;
+      outline: none;
+      transform: rotate(0deg);
+      transition: .5s ease-in-out;
+      cursor: pointer; }
+      .navbar .navbar-header .navbar-toggle:focus {
+        background: none; }
+      .navbar .navbar-header .navbar-toggle:hover {
+        background: none; }
+        .navbar .navbar-header .navbar-toggle:hover span {
+          background: #111; }
+      .navbar .navbar-header .navbar-toggle span {
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        background: #999;
+        opacity: 1;
+        left: 0;
+        transform: rotate(0deg);
+        transition: .25s ease-in-out; }
+        .navbar .navbar-header .navbar-toggle span:nth-child(2) {
+          top: 0; }
+        .navbar .navbar-header .navbar-toggle span:nth-child(3) {
+          top: 2px; }
+        .navbar .navbar-header .navbar-toggle span:nth-child(4) {
+          top: 8px; }
+    .navbar .navbar-header .navbar-toggle.open span:nth-child(2) {
+      top: 8px;
+      transform: rotate(135deg); }
+    .navbar .navbar-header .navbar-toggle.open span:nth-child(3) {
+      opacity: 0;
+      left: -32px; }
+    .navbar .navbar-header .navbar-toggle.open span:nth-child(4) {
+      top: 4px;
+      transform: rotate(-135deg); }
+  .navbar .navbar-collapse {
+    margin-top: 15px;
+    padding-left: 25px;
+    padding-right: 25px;
+    max-height: 100%;
+    border: none;
+    box-shadow: none; }
+    .navbar .navbar-collapse .nav-main-menu-items {
+      float: none; }
+    .navbar .navbar-collapse .navbar-right {
+      margin-left: -15px;
+      float: none; }
+    .navbar .navbar-collapse .navbar-nav {
+      padding-left: 15px;
+      padding-right: 15px; }
+      .navbar .navbar-collapse .navbar-nav .dropdown .dropdown-menu {
+        padding-top: 10px;
+        height: 100%;
+        border: none; }
+        .navbar .navbar-collapse .navbar-nav .dropdown .dropdown-menu .dropdown-banner {
+          display: none; }
+      .navbar .navbar-collapse .navbar-nav .dropdown .search-dropdown li form input[type="search"]:focus {
+        width: 100%; }
+  .navbar .navbar-right {
+    margin-right: 0; }
+  nav:not(.navbar-small) .navbar-header .navbar-toggle {
+    margin-top: 20px; }
+  .navbar-inverse .navbar-header .navbar-toggle:hover span {
+    background: #ececec; }
+  .navbar-inverse .navbar-header .navbar-toggle span {
+    background: #999;
+    transition: background .3s; } }
+
+@media (max-width: 1260px) {
+  .navbar-header {
+    float: none; }
+  .navbar-left, .navbar-right {
+    float: none !important; }
+  .navbar-toggle {
+    display: block; }
+  .navbar-collapse {
+    border-top: 1px solid transparent;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1); }
+  .navbar-fixed-top {
+    top: 0;
+    border-width: 0 0 1px; }
+  .navbar-collapse.collapse {
+    display: none !important; }
+  .navbar-nav {
+    float: none !important;
+    margin-top: 7.5px; }
+  .navbar-nav > li {
+    float: none; }
+  .navbar-nav > li > a {
+    padding-top: 10px;
+    padding-bottom: 10px; }
+  .collapse.in {
+    display: block !important; }
+  .navbar-nav .open .dropdown-menu {
+    position: static;
+    float: none;
+    width: auto;
+    margin-top: 0;
+    background-color: transparent;
+    border: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none; } }
+
+@media (max-width: 600px) {
+  nav.mobile-nav.navbar-small {
+    margin-top: 0 !important; } }
+
+/* --------------------------------------------------
+	2.0 Header/Page Title
+-------------------------------------------------- */
+@media (max-width: 770px) {
+  .page-title {
+    padding-right: 35px;
+    padding-left: 35px; }
+    .page-title .breadcrumb {
+      display: block;
+      margin-top: 50px;
+      float: left;
+      text-align: left; } }
+
+/* --------------------------------------------------
+	3.0 Footers
+-------------------------------------------------- */
+@media (max-width: 770px) {
+  .copyright {
+    text-align: center; }
+    .copyright .to-the-top {
+      float: none !important; } }
+
+/* --------------------------------------------------
+	4.0 Features
+-------------------------------------------------- */
+/* ---- 4.1 Feature Box ---- */
+@media (max-width: 992px) {
+  .ft-centered {
+    max-width: 450px;
+    margin: 0 auto 50px auto; } }
+
+@media (max-width: 992px) {
+  .ft-x {
+    max-width: 550px;
+    margin: auto; } }
+
+@media (max-width: 992px) {
+  .ft-right,
+  .ft-left {
+    max-width: 550px;
+    margin: auto;
+    margin-bottom: 50px; } }
+
+/* ---- 4.2 Feature - Cards  ---- */
+@media (max-width: 992px) {
+  .ft-cards {
+    max-width: 550px;
+    margin: auto; } }
+
+/* ---- 4.3 Feature - Cards 2 ---- */
+@media (max-width: 1260px) {
+  .ft-cards-2 .ft-card-item {
+    width: 350px;
+    height: auto;
+    padding-bottom: 50px;
+    margin: 0 auto 50px auto; }
+    .ft-cards-2 .ft-card-item img {
+      display: block;
+      float: none;
+      max-width: none; }
+    .ft-cards-2 .ft-card-item .ft-content {
+      display: block;
+      float: none;
+      width: auto; } }
+
+@media (max-width: 992px) {
+  .ft-cards-2 .ft-card-item {
+    width: 290px; }
+    .ft-cards-2 .ft-card-item img {
+      max-width: 290px; } }
+
+/* ---- 4.4 Feature - Steps Numbers ---- */
+@media (max-width: 992px) {
+  .ft-steps-numbers {
+    margin-bottom: 50px; } }
+
+/* ---- 4.5 Feature - Box Hover ---- */
+@media (max-width: 992px) {
+  .ft-boxed-hover .ft-item {
+    margin: auto;
+    max-width: 330px; } }
+
+/* ---- 4.6 Feature - Image Hover ---- */
+@media (max-width: 992px) {
+  .ft-image-hover .ft-item .bg-overlay {
+    background: rgba(17, 17, 17, 0.8); }
+  .ft-image-hover .ft-item .content-wrapper {
+    bottom: 100px; }
+    .ft-image-hover .ft-item .content-wrapper .ft-button {
+      opacity: 1; } }
+
+@media (max-width: 770px) {
+  .ft-image-hover .ft-item .content-wrapper {
+    left: 30px;
+    right: 30px; } }
+
+/* ---- 4.7 Feature - Link Cards ---- */
+@media (max-width: 992px) {
+  .link-cards-wrapper {
+    max-width: 550px;
+    margin: auto; } }
+
+/* --------------------------------------------------
+	5.0 Team Layouts
+-------------------------------------------------- */
+@media (max-width: 1260px) {
+  .team-member .t-item {
+    max-width: 360px;
+    margin: 0 auto; }
+    .team-member .t-item:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 22px 43px rgba(0, 0, 0, 0.15); }
+      .team-member .t-item:hover .t-image .t-description {
+        bottom: auto; }
+        .team-member .t-item:hover .t-image .t-description .content-wrapper {
+          padding-top: 30px; }
+    .team-member .t-item .t-image {
+      height: auto;
+      overflow: visible; }
+      .team-member .t-item .t-image .t-description {
+        position: relative;
+        padding: 30px 30px 0 30px;
+        bottom: auto;
+        left: auto;
+        height: auto;
+        width: auto; }
+        .team-member .t-item .t-image .t-description .content-wrapper {
+          opacity: 1;
+          padding-top: 30px;
+          padding-bottom: 30px;
+          border-bottom: 1px solid #ebebeb; }
+  .t-join {
+    max-width: 360px;
+    margin: 0 auto; }
+  .team-member-img {
+    max-width: 360px;
+    margin: auto; }
+    .team-member-img .t-image {
+      transform: translateY(-50px); }
+    .team-member-img .t-info {
+      transform: translateY(-50px); }
+      .team-member-img .t-info .social-links li {
+        transform: translateY(-25px); } }
+
+@media (max-width: 600px) {
+  .team-member .t-item {
+    width: 290px;
+    margin: 0 auto; }
+    .team-member .t-item:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 22px 43px rgba(0, 0, 0, 0.15); }
+      .team-member .t-item:hover .t-image .t-description {
+        bottom: auto; }
+        .team-member .t-item:hover .t-image .t-description .content-wrapper {
+          padding-top: 30px; }
+    .team-member .t-item .t-image {
+      width: 290px;
+      height: auto;
+      overflow: visible; }
+      .team-member .t-item .t-image .t-description {
+        position: relative;
+        padding: 30px 30px 0 30px;
+        bottom: auto;
+        left: auto;
+        height: auto;
+        width: auto; }
+        .team-member .t-item .t-image .t-description .content-wrapper {
+          opacity: 1;
+          padding-top: 30px;
+          padding-bottom: 30px;
+          border-bottom: 1px solid #ebebeb; }
+  .t-join {
+    width: 290px; } }
+
+/* --------------------------------------------------
+	6.0 Testimonials
+-------------------------------------------------- */
+@media (max-width: 992px) {
+  .testimonial-cards {
+    margin: auto;
+    max-width: 550px; } }
+
+@media (max-width: 600px) {
+  .t-slider blockquote {
+    font-size: 1.1em; }
+  .t-slider .slick-prev {
+    left: 0;
+    margin-left: -75px; }
+  .t-slider .slick-next {
+    right: 0;
+    margin-right: -75px; }
+  .t-clients li a img {
+    margin: auto; } }
+
+/* --------------------------------------------------
+	7.0 Pricing Tables
+-------------------------------------------------- */
+@media (max-width: 992px) {
+  .pricing-table .p-table {
+    max-width: 550px;
+    margin: auto; } }
+
+/* --------------------------------------------------
+	8.0 CTA - Call to Action
+-------------------------------------------------- */
+@media (max-width: 992px) {
+  .cta-newsletter .cta-wrapper input[type="email"] {
+    width: 85%; } }
+
+@media (max-width: 770px) {
+  .cta-newsletter .cta-wrapper input[type="email"] {
+    width: 85%;
+    font-size: 2.2em; } }
+
+@media (max-width: 600px) {
+  .cta-link .cta-wrapper h3 {
+    letter-spacing: 3px; }
+  .cta-newsletter .cta-wrapper input[type="email"] {
+    font-size: 1.7em; } }
+
+/* --------------------------------------------------
+	X.0 Portfolio
+-------------------------------------------------- */
+/* ---- Portfolio Masonry ---- */
+@media (max-width: 992px) {
+  .portfolio-masonry .p-item,
+  .portfolio-masonry .grid-sizer,
+  .portfolio-masonry-2 .p-item,
+  .portfolio-masonry-2 .grid-sizer,
+  .portfolio-masonry-3 .p-item,
+  .portfolio-masonry-3 .grid-sizer {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto; } }
+
+/* --------------------------------------------------
+	9.0 Contact Pages
+-------------------------------------------------- */
+/* ---- 9.1 Contact Layout 1 ---- */
+@media (max-width: 600px) {
+  .contact-1 .contact-wrapper .definity-gmap {
+    height: 700px !important; }
+  .contact-1 .contact-wrapper .contact-info-wrapper {
+    padding: 50px; } }
+
+/* ---- 9.2 Contact Layout 2 ---- */
+@media (max-width: 992px) {
+  .contact-2 .address-info ul li {
+    margin: auto !important;
+    width: 30%; }
+    .contact-2 .address-info ul li:last-child {
+      margin-bottom: 0 !important; }
+    .contact-2 .address-info ul li .adr-icon {
+      padding-right: 0 !important;
+      float: none !important; }
+    .contact-2 .address-info ul li .adr-group {
+      text-align: center !important;
+      float: none !important; }
+      .contact-2 .address-info ul li .adr-group .adr-heading {
+        display: block; } }
+
+@media (max-width: 770px) {
+  .contact-2 .address-info ul li {
+    width: 100%;
+    margin-bottom: 50px !important; } }
+
+/* ---- 9.3 Contact Layout 3 ---- */
+@media (max-width: 770px) {
+  .contact-3 .form-wrapper {
+    padding: 100px 50px 50px 50px; }
+    .contact-3 .form-wrapper .form-group {
+      padding-left: 0;
+      padding-right: 0; } }
+
+@media (max-width: 600px) {
+  .contact-3 .form-wrapper {
+    padding: 75px 35px; }
+    .contact-3 .form-wrapper .form-group {
+      padding-left: 0;
+      padding-right: 0; }
+    .contact-3 .form-wrapper form {
+      text-align: center; }
+      .contact-3 .form-wrapper form input[type="submit"] {
+        padding-left: 25px;
+        padding-right: 25px; } }
+
+/* ---- 9.4 Contact Layout 4 ---- */
+@media (max-width: 770px) {
+  .contact-4 .contact-info address {
+    padding-left: 25px;
+    padding-right: 50px; }
+    .contact-4 .contact-info address ul {
+      width: 100%; }
+  .contact-4 .contact-form {
+    margin-bottom: 100px;
+    padding-left: 25px;
+    padding-right: 25px; } }
+
+/* --------------------------------------------------
+	10.0 Blog Post/s
+-------------------------------------------------- */
+@media (max-width: 992px) {
+  .blog-post {
+    margin: auto;
+    max-width: 550px; }
+  .author-description {
+    padding: 50px 25px; }
+    .author-description .ad-description {
+      max-width: 100%;
+      font-size: 1em; }
+      .author-description .ad-description:before {
+        width: 100%; }
+      .author-description .ad-description:after {
+        width: 100%; }
+  aside.sidebar {
+    padding-top: 100px;
+    clear: both; }
+  .comments-area .comment-list .comment .children {
+    margin-left: 0; } }
+
+@media (max-width: 600px) {
+  nav.post-navigation .nav-links .nav-previous,
+  nav.post-navigation .nav-links .nav-next {
+    display: block;
+    float: none;
+    text-align: center; }
+  nav.post-navigation .nav-links .nav-next {
+    margin-top: 10px; } }
+
+/* --------------------------------------------------
+	11.0 404 Page
+-------------------------------------------------- */
+@media (max-width: 770px) {
+  .wrapper-404 .content-wrapper .lead-404 {
+    font-size: 100px; } }
