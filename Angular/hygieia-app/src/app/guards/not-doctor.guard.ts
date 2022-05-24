@@ -1,19 +1,21 @@
 import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTree } from '@angular/router';
 import { Observable } from 'rxjs';
-import { AuthService } from '../shared/services/auth.service';
+import { TokenProviderService } from '../shared/services/token-provider.service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class AuthGuard implements CanActivate {
-
-  constructor(private as: AuthService, private router: Router) { }
+export class NotDoctorGuard implements CanActivate {
+  
+  constructor(private tokenProvider: TokenProviderService,  private router: Router) { }
 
   canActivate(): boolean {
-    if(!this.as.isAuthenticated()) {
+    if(this.tokenProvider.getRole() == "Doctor") {
       this.router.navigate([''])
     }
+    
     return true;
   }
+  
 }

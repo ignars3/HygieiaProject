@@ -17,6 +17,10 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { HomeComponent } from './home/home.component';
 import { AuthorizationComponent } from './authorization/authorization.component';
 import { ProfileComponent } from './profile/profile.component';
+import { DoctorsComponent } from './doctors/doctors.component';
+import { PatientsComponent } from './patients/patients.component';
+import { DrugsComponent } from './drugs/drugs.component';
+import { NotificationsComponent } from './notifications/notifications.component';
 
 export function tokenGetter() {
   return localStorage.getItem(TOKEN_KEY);
@@ -27,7 +31,11 @@ export function tokenGetter() {
     AppComponent,
     HomeComponent,
     AuthorizationComponent,
-    ProfileComponent
+    ProfileComponent,
+    DoctorsComponent,
+    PatientsComponent,
+    DrugsComponent,
+    NotificationsComponent
   ],
   imports: [
     BrowserModule,

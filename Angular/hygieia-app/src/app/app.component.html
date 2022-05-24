@@ -2,11 +2,17 @@
 
   <div class="topnav">
     <a id="Home" (mouseover)="changeColor('Home')" (mouseout)="changeColor('Home')" style="margin-left:2%" [routerLink]="['/']" routerLinkActive='active' [routerLinkActiveOptions]="{exact: true}">Home</a>
+    <a id="Doctors" (mouseover)="changeColor('Doctors')" (mouseout)="changeColor('Doctors')" [routerLink]="['/doctors']" routerLinkActive='active' [routerLinkActiveOptions]="{exact: true}" *ngIf='isLoggedIn'>Doctors</a>
+    <a id="Patients" (mouseover)="changeColor('Patients')" (mouseout)="changeColor('Patients')" [routerLink]="['/patients']" routerLinkActive='active' [routerLinkActiveOptions]="{exact: true}" *ngIf='isLoggedIn'>Patients</a>
+    <a id="Drugs" (mouseover)="changeColor('Drugs')" (mouseout)="changeColor('Drugs')" [routerLink]="['/drugs']" routerLinkActive='active' [routerLinkActiveOptions]="{exact: true}" *ngIf='isLoggedIn'>Drugs</a>
+    
     <span class="example-fill-remaining-space"></span>
     <a id="Login" (mouseover)="changeColor('Login')" (mouseout)="changeColor('Login')" style="margin-right:2%" [routerLink]="['/login']" routerLinkActive='active' [routerLinkActiveOptions]="{exact: true}" *ngIf='!isLoggedIn'>Log in</a>
     <a id="Profile" (mouseover)="changeColor('Profile')" (mouseout)="changeColor('Profile')" [routerLink]="['/profile']" routerLinkActive='active' [routerLinkActiveOptions]="{exact: true}" *ngIf='isLoggedIn'>Profile</a>
-    <a id="Logout" (mouseover)="changeColor('Logout')" (mouseout)="changeColor('Logout')" style="margin-right:2%" [routerLink]="['/']" (click)="logout()" routerLinkActive='' [routerLinkActiveOptions]="{exact: true}" *ngIf='isLoggedIn'>Log out</a>
+    <a id="Logout" (mouseover)="changeColor('Logout')" (mouseout)="changeColor('Logout')" [routerLink]="['/']" (click)="logout()" routerLinkActive='' [routerLinkActiveOptions]="{exact: true}" *ngIf='isLoggedIn'>Log out</a>
+    
+    <img id="Notification" (click)="showNotification()" (mouseover)="changeColor('Notification')" (mouseout)="changeColor('Notification')" *ngIf='isLoggedIn' class="notification" src="../assets/notification.png">
   </div>
-
+  <app-notifications *ngIf="isNotification"></app-notifications>
   <router-outlet></router-outlet>
 </div>

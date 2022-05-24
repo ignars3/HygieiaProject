@@ -9,10 +9,16 @@ import { AuthService } from './shared/services/auth.service';
 export class AppComponent {
   title = 'hygieia-app';
 
+  private isNotify: boolean = false;
+
   constructor(private as: AuthService) { }
   
   public get isLoggedIn(): boolean {
     return this.as.isAuthenticated()
+  }
+
+  public get isNotification(): boolean {
+    return this.isNotify;
   }
 
   logout() {
@@ -21,13 +27,39 @@ export class AppComponent {
 
   changeColor(id: string) {
     var element = document.getElementById(id);
-    if (element?.classList.contains('highlight'))
+
+    if(id == "Notification")
     {
-      element?.classList.remove("highlight");
+      if (element?.classList.contains('highlight-n'))
+      {
+        element?.classList.remove("highlight-n");
+      }
+      else
+      {
+        element?.classList.add("highlight-n");
+      }
     }
     else
     {
-      element?.classList.add("highlight");
+      if (element?.classList.contains('highlight'))
+      {
+        element?.classList.remove("highlight");
+      }
+      else
+      {
+        element?.classList.add("highlight");
+      }
+    }
+  }
+
+  showNotification() {
+    if (this.isNotify)
+    {
+      this.isNotify = false;
+    }
+    else
+    {
+      this.isNotify = true;
     }
   }
 }
