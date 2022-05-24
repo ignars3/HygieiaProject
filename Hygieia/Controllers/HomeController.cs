@@ -20,6 +20,23 @@ namespace Hygieia.Controllers
             _authorizationService = authorizationService;
         }
 
+        [Route("test")]
+        [HttpGet]
+        public IActionResult Test()
+        {
+
+            return Ok(new { text = "It works" });
+
+        }
+        [Route("users")]
+        [HttpGet]
+        public IActionResult Users()
+        {
+            var users = _authorizationService.GetUsers();
+
+            return Ok(new { users = users });
+        }
+
         [Route("login")]
         [HttpPost]
         public IActionResult Login([FromBody] LoginModel loginModel)

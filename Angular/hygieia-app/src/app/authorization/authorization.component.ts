@@ -1,4 +1,5 @@
 import { Component, OnInit, Renderer2 } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthService } from '../shared/services/auth.service';
 
 @Component({
@@ -8,7 +9,7 @@ import { AuthService } from '../shared/services/auth.service';
 })
 export class AuthorizationComponent implements OnInit {
 
-  constructor(private as: AuthService, private renderer: Renderer2) 
+  constructor(private as: AuthService, private renderer: Renderer2, private router: Router) 
   { }
 
   public errorMessage: string = '';
@@ -29,6 +30,7 @@ export class AuthorizationComponent implements OnInit {
 
     return false;
   }
+
   register(username: string, password: string) {
     let element = document.getElementById('mat-input-2');
     let firstName: string = element ? element.nodeValue ? element.nodeValue: '': '';
@@ -37,12 +39,16 @@ export class AuthorizationComponent implements OnInit {
     let secondName: string = element ? element.nodeValue ? element.nodeValue: '': '';
 
     element = document.getElementById('mat-input-4');
-    let phone: string = element ? element.nodeValue ? element.nodeValue: '': '';
+    let thirdName: string = element ? element.nodeValue ? element.nodeValue: '': '';
 
     element = document.getElementById('mat-input-5');
+    let phone: string = element ? element.nodeValue ? element.nodeValue: '': '';
+
+    element = document.getElementById('mat-input-6');
     let adress: string = element ? element.nodeValue ? element.nodeValue: '': '';
 
     this.as.register(username, password, firstName, secondName, phone, adress).subscribe(res => {
+      this.router.navigate(['']);
     }, error => {
       this.errorMessage = 'User with this email already exists';
     })
@@ -50,6 +56,7 @@ export class AuthorizationComponent implements OnInit {
 
   login(username: string, password: string) {
     this.as.login(username, password).subscribe(res => {
+      this.router.navigate(['']);
       }, error => {
         this.errorMessage = 'Wrong username or password';
       })
@@ -79,5 +86,7 @@ export class AuthorizationComponent implements OnInit {
 
       this.authNotText = 'Log in'
     }
+
+    this.errorMessage = "";
   }
 }

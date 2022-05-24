@@ -1,0 +1,12 @@
+D:\LNU\HygieiaProject\HygieiaData\bin\Release\net5.0\HygieiaData.deps.json
+D:\LNU\HygieiaProject\HygieiaData\bin\Release\net5.0\HygieiaData.dll
+D:\LNU\HygieiaProject\HygieiaData\bin\Release\net5.0\ref\HygieiaData.dll
+D:\LNU\HygieiaProject\HygieiaData\bin\Release\net5.0\HygieiaData.pdb
+D:\LNU\HygieiaProject\HygieiaData\obj\Release\net5.0\HygieiaData.csproj.AssemblyReference.cache
+D:\LNU\HygieiaProject\HygieiaData\obj\Release\net5.0\HygieiaData.GeneratedMSBuildEditorConfig.editorconfig
+D:\LNU\HygieiaProject\HygieiaData\obj\Release\net5.0\HygieiaData.AssemblyInfoInputs.cache
+D:\LNU\HygieiaProject\HygieiaData\obj\Release\net5.0\HygieiaData.AssemblyInfo.cs
+D:\LNU\HygieiaProject\HygieiaData\obj\Release\net5.0\HygieiaData.csproj.CoreCompileInputs.cache
+D:\LNU\HygieiaProject\HygieiaData\obj\Release\net5.0\HygieiaData.dll
+D:\LNU\HygieiaProject\HygieiaData\obj\Release\net5.0\ref\HygieiaData.dll
+D:\LNU\HygieiaProject\HygieiaData\obj\Release\net5.0\HygieiaData.pdb
