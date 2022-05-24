@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { Observable, tap } from 'rxjs';
+import { TestClass } from '../models/test';
 import { Token } from '../models/token';
 
 export const TOKEN_KEY = 'token'
@@ -11,9 +12,9 @@ export const TOKEN_KEY = 'token'
   providedIn: 'root'
 })
 export class AuthService {
-
-  private apiUrl: string = 'https://localhost:5001/api/Home/login';
-  private apiRegUrl: string = 'https://localhost:5001/api/Home/register';
+  private testUrl: string = 'https://hygieiaweb.azurewebsites.net/api/home/test';
+  private apiUrl: string = 'https://hygieiaweb.azurewebsites.net/api/home/login';
+  private apiRegUrl: string = 'https://hygieiaweb.azurewebsites.net/api/home/register';
 
   constructor(
     private http: HttpClient,
@@ -23,6 +24,10 @@ export class AuthService {
 
   register(username: string, password: string, firstName: string, secondName: string, phone: string, adress: string) {
     return this.http.post<Token>(this.apiRegUrl, {username, password, firstName, secondName, phone, adress}).pipe(tap(token => {localStorage.setItem(TOKEN_KEY, token.access_token);}))
+  }
+
+  test(): Observable<TestClass> {
+    return this.http.get<TestClass>(this.testUrl).pipe(tap(test => {console.log(test.text)}));
   }
 
   login(username: string, password: string): Observable<Token> {

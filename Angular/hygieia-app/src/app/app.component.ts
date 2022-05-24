@@ -18,4 +18,16 @@ export class AppComponent {
   logout() {
     this.as.logout()
   }
+
+  changeColor(id: string) {
+    var element = document.getElementById(id);
+    if (element?.classList.contains('highlight'))
+    {
+      element?.classList.remove("highlight");
+    }
+    else
+    {
+      element?.classList.add("highlight");
+    }
+  }
 }

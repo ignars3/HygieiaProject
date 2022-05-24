@@ -1,10 +1,11 @@
 <div>
 
   <div class="topnav">
-    <a [routerLink]="['/']" routerLinkActive='active' [routerLinkActiveOptions]="{exact: true}">Home</a>
-    <a [routerLink]="['/login']" routerLinkActive='active' [routerLinkActiveOptions]="{exact: true}" *ngIf='!isLoggedIn'>Log in</a>
-    <a [routerLink]="['/profile']" routerLinkActive='active' [routerLinkActiveOptions]="{exact: true}" *ngIf='isLoggedIn'>Profile</a>
-    <a [routerLink]="['/']" (click)="logout()" routerLinkActive='' [routerLinkActiveOptions]="{exact: true}" *ngIf='isLoggedIn'>Log out</a>
+    <a id="Home" (mouseover)="changeColor('Home')" (mouseout)="changeColor('Home')" style="margin-left:2%" [routerLink]="['/']" routerLinkActive='active' [routerLinkActiveOptions]="{exact: true}">Home</a>
+    <span class="example-fill-remaining-space"></span>
+    <a id="Login" (mouseover)="changeColor('Login')" (mouseout)="changeColor('Login')" style="margin-right:2%" [routerLink]="['/login']" routerLinkActive='active' [routerLinkActiveOptions]="{exact: true}" *ngIf='!isLoggedIn'>Log in</a>
+    <a id="Profile" (mouseover)="changeColor('Profile')" (mouseout)="changeColor('Profile')" [routerLink]="['/profile']" routerLinkActive='active' [routerLinkActiveOptions]="{exact: true}" *ngIf='isLoggedIn'>Profile</a>
+    <a id="Logout" (mouseover)="changeColor('Logout')" (mouseout)="changeColor('Logout')" style="margin-right:2%" [routerLink]="['/']" (click)="logout()" routerLinkActive='' [routerLinkActiveOptions]="{exact: true}" *ngIf='isLoggedIn'>Log out</a>
   </div>
 
   <router-outlet></router-outlet>

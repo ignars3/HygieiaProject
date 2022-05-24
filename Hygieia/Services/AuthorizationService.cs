@@ -28,6 +28,13 @@ namespace Hygieia.Services
             _userRepository = userRepository;
         }
 
+        public List<User> GetUsers()
+        {
+            var users = _userRepository.GetAll().ToList();
+
+            return users;
+        }
+
         public string GetToken(string username, string password)
         {
             var identity = GetIdentity(username, password);

@@ -40,7 +40,6 @@ export function tokenGetter() {
     MatButtonModule,
     MatTableModule,
     MatFormFieldModule,
-
     JwtModule.forRoot({
       config: {
         tokenGetter: tokenGetter,

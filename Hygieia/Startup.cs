@@ -54,11 +54,7 @@ namespace Hygieia
                         };
                     });
 
-            var builder = new MySqlConnectionStringBuilder(Configuration.GetConnectionString("DefaultConnection"))
-            {
-                UserID = "root",
-                Password = "Ignars3"
-            };
+            var builder = new MySqlConnectionStringBuilder(Configuration.GetConnectionString("DefaultConnection"));
 
             services.AddDbContext<DataContext>(
                 options => options.UseMySql(
@@ -93,9 +89,10 @@ namespace Hygieia
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Hygieia v1"));
             }
+
+            app.UseSwagger();
+            app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Hygieia v1"));
 
             app.UseHttpsRedirection();
             app.UseCors();
@@ -103,6 +100,9 @@ namespace Hygieia
 
             app.UseAuthentication();
             app.UseAuthorization();
+
+            app.UseDefaultFiles();
+            app.UseStaticFiles();
 
             app.UseEndpoints(endpoints =>
             {
