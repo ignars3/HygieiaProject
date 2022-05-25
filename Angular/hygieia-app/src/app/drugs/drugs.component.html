@@ -1,1 +1,296 @@
-<p>drugs works!</p>
+
+<div class="fill-header">
+    <div class="fill-image"></div>
+</div>
+
+<div class="search-bar">
+    <input class="search-input">
+    <button mat-button class="search-button">Search</button>
+</div>
+
+<div class="filter">
+    <div class="search-body">
+        <div class="row">
+            <div class="filters">
+                <div class="title-filter">
+                    Filters
+                </div>
+
+                <div class="search-filter">
+                    <div class="search-text">
+                        Verification
+                        <div class="filter-box">
+                            <p><mat-checkbox class="filter-check" type="checkbox">  Verified</mat-checkbox></p>
+                            <p><mat-checkbox class="filter-check" type="checkbox">  Not verified</mat-checkbox></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="search-filter">
+                    <div class="search-text">
+                        Made in
+                        <div class="filter-box">
+                            <p><mat-checkbox class="filter-check" type="checkbox">  Ukraine</mat-checkbox></p>
+                            <p><mat-checkbox class="filter-check" type="checkbox">  USA</mat-checkbox></p>
+                            <p><mat-checkbox class="filter-check" type="checkbox">  UK</mat-checkbox></p>
+                            <p><mat-checkbox class="filter-check" type="checkbox">  Germany</mat-checkbox></p>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div class="search-filter">
+                    <div class="search-text">
+                        Region
+                        <div class="filter-box">
+                            <p><mat-checkbox class="filter-check" type="checkbox">  Lviv</mat-checkbox></p>
+                            <p><mat-checkbox class="filter-check" type="checkbox">  Kyiv</mat-checkbox></p>
+                            <p><mat-checkbox class="filter-check" type="checkbox">  Odessa</mat-checkbox></p>
+                            <p><mat-checkbox class="filter-check" type="checkbox">  Ivano Frankivsk</mat-checkbox></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="search-filter">
+                    <div class="search-text">
+                        Price
+                        <div class="filter-box">
+                            <mat-slider thumbLabel horizontal class="filter-value" min="100" max="2000" step="19" value="100"> </mat-slider>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="results">
+                <div class="header-panel">
+                    <div>
+                        <mat-form-field appearance="fill">
+                            <mat-label>Sorted By</mat-label>
+                            <mat-select>
+                            <mat-option [value]="0">
+                                Name
+                            </mat-option>
+                            <mat-option [value]="1">
+                                Price
+                            </mat-option>
+                            <mat-option [value]="2">
+                                Rating
+                            </mat-option>
+                            <mat-option [value]="3">
+                                Location
+                            </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <p></p>
+                <div class="grid">
+                <div class="element">
+                    <div class="first-area">
+                        <img class="photo" src="../../assets/drug1.jpg">
+                        <div class="rating">
+                            Aspirin
+                        </div>
+                    </div>
+
+                        <div class="buttons">
+                            <button (click)='details()' mat-button class="button-wrap-details">
+                                Details
+                            </button>
+                            <button (click)='request()' mat-button class="button-wrap">
+                                Add to favourite list
+                            </button>
+                        </div>
+                </div>
+
+                <div class="element">
+                    <div class="first-area">
+                        <img class="photo" src="../../assets/drug2.jpg">
+                        <div class="rating">
+                            Hydrolysed
+                        </div>
+                    </div>
+
+                        <div class="buttons">
+                            <button (click)='details()' mat-button class="button-wrap-details">
+                                Details
+                            </button>
+                            <button (click)='request()' mat-button class="button-wrap">
+                                Add to favourite list
+                            </button>
+                        </div>
+                </div>
+
+                <div class="element">
+                    <div class="first-area">
+                        <img class="photo" src="../../assets/drug3.jpg">
+                        <div class="rating">
+                            Vitamin D3
+                        </div>
+                    </div>
+
+                        <div class="buttons">
+                            <button (click)='details()' mat-button class="button-wrap-details">
+                                Details
+                            </button>
+                            <button (click)='request()' mat-button class="button-wrap">
+                                Add to favourite list
+                            </button>
+                        </div>
+                </div>
+                </div>
+                <div class="grid">
+
+                <div class="element">
+                    <div class="first-area">
+                        <img class="photo" src="../../assets/drug4.jpg">
+                        <div class="rating">
+                            MultiVitamins
+                        </div>
+                    </div>
+
+                        <div class="buttons">
+                            <button (click)='details()' mat-button class="button-wrap-details">
+                                Details
+                            </button>
+                            <button (click)='request()' mat-button class="button-wrap">
+                                Add to favourite list
+                            </button>
+                        </div>
+                </div>
+
+                <div class="element">
+                    <div class="first-area">
+                        <img class="photo" src="../../assets/drug5.jpg">
+                        <div class="rating">
+                            Liver Oil
+                        </div>
+                    </div>
+
+                        <div class="buttons">
+                            <button (click)='details()' mat-button class="button-wrap-details">
+                                Details
+                            </button>
+                            <button (click)='request()' mat-button class="button-wrap">
+                                Add to favourite list
+                            </button>
+                        </div>
+                </div>
+
+                <div class="element">
+                    <div class="first-area">
+                        <img class="photo" src="../../assets/drug6.jpg">
+                        <div class="rating">
+                            Vitamin B12
+                        </div>
+                    </div>
+
+                        <div class="buttons">
+                            <button (click)='details()' mat-button class="button-wrap-details">
+                                Details
+                            </button>
+                            <button (click)='request()' mat-button class="button-wrap">
+                                Add to favourite list
+                            </button>
+                        </div>
+                </div>
+
+                </div>
+
+                <div class="grid">
+                <div class="element">
+                    <div class="first-area">
+                        <img class="photo" src="../../assets/drug7.jpg">
+                        <div class="rating">
+                            Complex B6
+                        </div>
+                    </div>
+
+                        <div class="buttons">
+                            <button (click)='details()' mat-button class="button-wrap-details">
+                                Details
+                            </button>
+                            <button (click)='request()' mat-button class="button-wrap">
+                                Add to favourite list
+                            </button>
+                        </div>
+                </div>
+
+                <div class="element">
+                    <div class="first-area">
+                        <img class="photo" src="../../assets/drug8.jpg">
+                        <div class="rating">
+                            Magnesium 6
+                        </div>
+                    </div>
+
+                        <div class="buttons">
+                            <button (click)='details()' mat-button class="button-wrap-details">
+                                Details
+                            </button>
+                            <button (click)='request()' mat-button class="button-wrap">
+                                Add to favourite list
+                            </button>
+                        </div>
+                </div>
+
+                <div class="element">
+                    <div class="first-area">
+                        <img class="photo" src="../../assets/drug9.jpg">
+                        <div class="rating">
+                            Primrose Oil
+                        </div>
+                    </div>
+
+                        <div class="buttons">
+                            <button (click)='details()' mat-button class="button-wrap-details">
+                                Details
+                            </button>
+                            <button (click)='request()' mat-button class="button-wrap">
+                                Add to favourite list
+                            </button>
+                        </div>
+                </div>
+
+            </div>
+            <div class="grid">
+                <div class="element">
+                    <div class="first-area">
+                        <img class="photo" src="../../assets/drug10.jpg">
+                        <div class="rating">
+                            Glucosamine
+                        </div>
+                    </div>
+
+                        <div class="buttons">
+                            <button (click)='details()' mat-button class="button-wrap-details">
+                                Details
+                            </button>
+                            <button (click)='request()' mat-button class="button-wrap">
+                                Add to favourite list
+                            </button>
+                        </div>
+                </div>
+
+                <div class="element">
+                    <div class="first-area">
+                        <img class="photo" src="../../assets/drug11.jpg">
+                        <div class="rating">
+                            Cranberry 4
+                        </div>
+                    </div>
+
+                        <div class="buttons">
+                            <button (click)='details()' mat-button class="button-wrap-details">
+                                Details
+                            </button>
+                            <button (click)='request()' mat-button class="button-wrap">
+                                Add to favourite list
+                            </button>
+                        </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,1 +1,213 @@
-<p>patients works!</p>
+
+<div class="fill-header">
+    <div class="fill-image"></div>
+</div>
+
+<div class="search-bar">
+    <input class="search-input">
+    <button mat-button class="search-button">Search</button>
+</div>
+
+<div class="filter">
+    <div class="search-body">
+        <div class="row">
+            <div class="filters">
+                <div class="title-filter">
+                    Filters
+                </div>
+
+                <div class="search-filter">
+                    <div class="search-text">
+                        Family Doctor
+                        <div class="filter-box">
+                            <p><mat-checkbox class="filter-check" type="checkbox">  With family doctor</mat-checkbox></p>
+                            <p><mat-checkbox class="filter-check" type="checkbox">  Without family doctor </mat-checkbox></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="search-filter">
+                    <div class="search-text">
+                        Full profile
+                        <div class="filter-box">
+                            <p><mat-checkbox class="filter-check" type="checkbox">  With fully filled profile</mat-checkbox></p>
+                            <p><mat-checkbox class="filter-check" type="checkbox">  With partly filled profile</mat-checkbox></p>
+                            <p><mat-checkbox class="filter-check" type="checkbox">  With not filled profile</mat-checkbox></p>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div class="search-filter">
+                    <div class="search-text">
+                        Region
+                        <div class="filter-box">
+                            <p><mat-checkbox class="filter-check" type="checkbox">  Lviv</mat-checkbox></p>
+                            <p><mat-checkbox class="filter-check" type="checkbox">  Kyiv</mat-checkbox></p>
+                            <p><mat-checkbox class="filter-check" type="checkbox">  Odessa</mat-checkbox></p>
+                            <p><mat-checkbox class="filter-check" type="checkbox">  Ivano Frankivsk</mat-checkbox></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="search-filter">
+                    <div class="search-text">
+                        Distance
+                        <div class="filter-box">
+                            <mat-slider thumbLabel horizontal class="filter-value" min="100" max="2000" step="19" value="100"> </mat-slider>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="results">
+                <div class="header-panel">
+                    <div>
+                        <mat-form-field appearance="fill">
+                            <mat-label>Sorted By</mat-label>
+                            <mat-select>
+                            <mat-option [value]="0">
+                                Name
+                            </mat-option>
+                            <mat-option [value]="1">
+                                Price
+                            </mat-option>
+                            <mat-option [value]="2">
+                                Rating
+                            </mat-option>
+                            <mat-option [value]="3">
+                                Location
+                            </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                </div>
+
+                <div class="element">
+                    <div class="first-area">
+                        <img class="photo" src="../../assets/patient1.jpg">
+                    </div>
+
+                    <div class="second-area">
+                        <p class="title">Bern Francher</p>
+                        <p class="text"> Phone: 380731452845 </p>
+                        <p class="text"> Address: Great Lery`s street, 45 </p>
+                        <p class="text"> Family doctor: Ben Genister </p>
+                        <div class="buttons">
+                            <button (click)='details()' mat-button class="button-wrap-details">
+                                Contact Family Doctor
+                            </button>
+                            <button (click)='request()' mat-button class="button-wrap">
+                                Request More Info
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="third-area">
+                        <img class="map" src="../../assets/map5.jpg">
+                    </div>
+                </div>
+
+                <div class="element">
+                    <div class="first-area">
+                        <img class="photo" src="../../assets/patient2.jpg">
+                    </div>
+
+                    <div class="second-area">
+                        <p class="title">Terry Mentonson</p>
+                        <p class="text"> Phone: 380731452845 </p>
+                        <p class="text"> Address: Westminster, 2 </p>
+                        <p class="text"> Family doctor: Jaime Haney </p>
+                        <div class="buttons">
+                            <button (click)='details()' mat-button class="button-wrap-details">
+                                Contact Family Doctor
+                            </button>
+                            <button (click)='request()' mat-button class="button-wrap">
+                                Request More Info
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="third-area">
+                        <img class="map" src="../../assets/map4.jpg">
+                    </div>
+                </div>
+
+                <div class="element">
+                    <div class="first-area">
+                        <img class="photo" src="../../assets/patient3.jpg">
+                    </div>
+
+                    <div class="second-area">
+                        <p class="title">Jane Fiechero</p>
+                        <p class="text"> Phone: 380731452845 </p>
+                        <p class="text"> Address: Treid The First, 24b </p>
+                        <p class="text"> Family doctor: Macie Dalton </p>
+                        <div class="buttons">
+                            <button (click)='details()' mat-button class="button-wrap-details">
+                                Contact Family Doctor
+                            </button>
+                            <button (click)='request()' mat-button class="button-wrap">
+                                Request More Info
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="third-area">
+                        <img class="map" src="../../assets/map2.jpg">
+                    </div>
+                </div>
+
+                <div class="element">
+                    <div class="first-area">
+                        <img class="photo" src="../../assets/patient4.jpg">
+                    </div>
+
+                    <div class="second-area">
+                        <p class="title">Azi Nersov</p>
+                        <p class="text"> Phone: 380731452845 </p>
+                        <p class="text"> Address: Holent street, 1</p>
+                        <p class="text"> Family doctor: Janet Haynes </p>
+                        <div class="buttons">
+                            <button (click)='details()' mat-button class="button-wrap-details">
+                                Contact Family Doctor
+                            </button>
+                            <button (click)='request()' mat-button class="button-wrap">
+                                Request More Info
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="third-area">
+                        <img class="map" src="../../assets/map3.jpg">
+                    </div>
+                </div>
+
+                <div class="element">
+                    <div class="first-area">
+                        <img class="photo" src="../../assets/patient5.jpg">
+                    </div>
+
+                    <div class="second-area">
+                        <p class="title">Tom Renosky</p>
+                        <p class="text"> Phone: 380731452845 </p>
+                        <p class="text"> Address: Tern Ben street, 1 </p>
+                        <p class="text"> Family doctor: Nickolas Pratt</p>
+                        <div class="buttons">
+                            <button (click)='details()' mat-button class="button-wrap-details">
+                                Contact Family Doctor
+                            </button>
+                            <button (click)='request()' mat-button class="button-wrap">
+                                Request More Info
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="third-area">
+                        <img class="map" src="../../assets/map1.jpg">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

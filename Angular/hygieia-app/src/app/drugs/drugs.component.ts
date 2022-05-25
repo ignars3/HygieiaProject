@@ -12,4 +12,12 @@ export class DrugsComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  request() {
+
+  }
+
+  details() {
+
+  }
+
 }

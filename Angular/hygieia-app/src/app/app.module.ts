@@ -14,6 +14,9 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTableModule } from '@angular/material/table';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatSliderModule } from '@angular/material/slider';
+import { MatSelectModule } from '@angular/material/select';
 import { HomeComponent } from './home/home.component';
 import { AuthorizationComponent } from './authorization/authorization.component';
 import { ProfileComponent } from './profile/profile.component';
@@ -42,16 +45,18 @@ export function tokenGetter() {
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-
+    MatCheckboxModule,
     MatCardModule,
     MatInputModule,
     MatButtonModule,
     MatTableModule,
     MatFormFieldModule,
+    MatSelectModule,
+    MatSliderModule,
     JwtModule.forRoot({
       config: {
         tokenGetter: tokenGetter,
-        allowedDomains: ['localhost']
+        allowedDomains: ['localhost', 'hygieiaweb.azurewebsites.net']
       }
     })
 
