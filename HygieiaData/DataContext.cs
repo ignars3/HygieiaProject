@@ -10,8 +10,8 @@ namespace HygieiaData
 
         public DataContext(DbContextOptions<DataContext> options) : base(options)
         {
-            Database.EnsureCreated();
-            AddMockedData();
+            //Database.EnsureCreated();
+            //AddMockedData();
         }
 
         protected override void OnModelCreating(ModelBuilder builder) { }

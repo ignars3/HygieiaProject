@@ -4,6 +4,7 @@ using HygieiaData;
 using HygieiaData.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using System.IO;
 
 namespace Hygieia.Controllers
 {
@@ -49,6 +50,16 @@ namespace Hygieia.Controllers
             }
 
             return Ok(new { access_token = token });
+        }
+
+        [HttpGet]
+        [Route("load")]
+        public IActionResult Load()
+        {
+            string physicalPath = "Models/doc2.pdf";
+            byte[] pdfBytes = System.IO.File.ReadAllBytes(physicalPath);
+            MemoryStream ms = new MemoryStream(pdfBytes);
+            return new FileStreamResult(ms, "application/pdf");
         }
     }
 }

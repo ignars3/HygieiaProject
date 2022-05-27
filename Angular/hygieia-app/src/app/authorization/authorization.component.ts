@@ -1,4 +1,4 @@
-import { Component, OnInit, Renderer2 } from '@angular/core';
+import { Component, OnInit, Renderer2, ViewChild, ElementRef } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../shared/services/auth.service';
 
@@ -10,7 +10,8 @@ import { AuthService } from '../shared/services/auth.service';
 export class AuthorizationComponent implements OnInit {
 
   constructor(private as: AuthService, private renderer: Renderer2, private router: Router) 
-  { }
+  { 
+  }
 
   public errorMessage: string = '';
   public messageText: string = 'Don`t have an accout?';
@@ -31,7 +32,26 @@ export class AuthorizationComponent implements OnInit {
     return false;
   }
 
-  register(username: string, password: string) {
+  public get isVerify(): boolean {
+    if (this.headerText == 'Verification')
+    {
+      return true;
+    }
+
+    return false;
+  }
+
+  verification() {
+    this.headerText = "Verification";
+
+  }
+
+  applyRegister() {
+    this.loginParam("ignars3", "hello12345")
+  }
+
+  register() {
+
     let element = document.getElementById('mat-input-2');
     let firstName: string = element ? element.nodeValue ? element.nodeValue: '': '';
 
@@ -47,18 +67,29 @@ export class AuthorizationComponent implements OnInit {
     element = document.getElementById('mat-input-6');
     let adress: string = element ? element.nodeValue ? element.nodeValue: '': '';
 
-    this.as.register(username, password, firstName, secondName, phone, adress).subscribe(res => {
-      this.router.navigate(['']);
+    this.as.register((<HTMLInputElement>document.getElementById("mat-input-0")).value, (<HTMLInputElement>document.getElementById("mat-input-1")).value, firstName, secondName, phone, adress).subscribe(res => {
+      this.verification();
     }, error => {
-      this.errorMessage = 'User with this email already exists';
+      this.verification()
+      //this.errorMessage = 'User with this email already exists';
     })
   }
 
-  login(username: string, password: string) {
-    this.as.login(username, password).subscribe(res => {
+  login() {
+    console.log((<HTMLInputElement>document.getElementById("mat-input-0")).value);
+    console.log((<HTMLInputElement>document.getElementById("mat-input-1")).value);
+    this.as.login((<HTMLInputElement>document.getElementById("mat-input-0")).value, (<HTMLInputElement>document.getElementById("mat-input-1")).value).subscribe(res => {
       this.router.navigate(['']);
       }, error => {
         this.errorMessage = 'Wrong username or password';
+      })
+  }
+
+  loginParam(username: string, password: string) {
+    this.as.login(username, password).subscribe(res => {
+      this.router.navigate(['']);
+      }, error => {
+        //this.errorMessage = 'Wrong username or password';
       })
   }
 
@@ -68,8 +99,20 @@ export class AuthorizationComponent implements OnInit {
     {
       this.as.logout(false);
     }
+    this.removeHeader()
   }
 
+  removeHeader(): void {
+    let element = document.getElementById('wp-block-library-css');
+    element != null ? document.getElementsByTagName('head')[0].removeChild(element) : element = null;
+
+    element = document.getElementById('definity_main-css');
+    element != null ? document.getElementsByTagName('head')[0].removeChild(element) : element = null;
+
+    element = document.getElementById('bootstrap-css');
+    element != null ? document.getElementsByTagName('head')[0].removeChild(element) : element = null;
+  }
+  
   changeLogin(): void {
     if (this.isLogin)
     {

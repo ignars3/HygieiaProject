@@ -16,15 +16,16 @@
 }
 
 .item {
-    border: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
     margin-bottom: 20px;
     padding: 6px;
-    border-radius: 8px;
+    border-radius: 1px;
 }
 
 .title {
     font-size: 16px;
     font-weight: bold;
+    margin-bottom: 4px;
 }
 
 .text {

@@ -1,1 +1,369 @@
-<p>profile works!</p>
+
+<div class="filter">
+<div class="main-body">
+    <div class="info-panel">
+        <span class="image-container">
+            <img style="height: 100%; width: 100%;" src="../../assets/5.jpg">
+        </span>
+
+        <span class="decription">
+            <p class="name">Adam Neskov</p>
+            <p class="attribure">Phone:  380731552072</p>
+            <p class="attribure">Mail:  example@gmail.com</p>
+            <p style="margin-bottom: 0px !important;" class="attribure">Address:  Walters street, 2a</p>
+            <p style="margin: 0 !important;">⠀⠀⠀⠀</p>
+            <p style="margin-top: 2px !important;" class="attribure">⠀⠀Current Rating:  4.9</p>
+
+            <button (click)='edit()' mat-button class="button-wrap">
+                Edit Info
+            </button>
+        </span>
+
+        <div class="notes">
+            <span class="yellow-note">
+                Patients on Monday
+            </span>
+
+            <span class="green-note">
+                Verify blood test
+            </span>
+
+            <span class="blue-note">
+                Call Travis
+            </span>
+
+            <span class="purple-note">
+                Note
+            </span>
+        </div>
+    </div>
+
+    <div class="button-panel">
+        <button (click)='makeSheduler()' mat-button class="button-control"> Sheduler </button>
+        <button (click)='makeApply()' mat-button class="button-control"> Your Apply Forms</button>
+        <button (click)='makeManage()' mat-button class="button-control"> Manage Examinations</button>
+        <button (click)='makeChat()' mat-button class="button-control"> Chat </button>
+    </div>
+
+    <div class="form-body">
+        <div class="form-panel">
+            <div class="main-panel" *ngIf="isSheduler">
+                <div class="button-header">
+                    <button (click)='sheduler()' mat-button class="button-selected"> Monday </button>
+                    <button (click)='applyForm()' mat-button class="button-inside"> Tuesday </button>
+                    <button (click)='fillData()' mat-button class="button-inside"> Wednesday </button>
+                    <button (click)='chat()' mat-button class="button-inside"> Thursday </button>
+                    <button (click)='chat()' mat-button class="button-inside"> Friday </button>
+                    <button (click)='chat()' mat-button class="button-inside"> Saturday </button>
+                    <button (click)='chat()' mat-button class="button-inside"> Sunday </button>
+                </div>
+
+                <div class="content">
+                    <div class="numbers">
+                        <span class="time"> 9 </span>
+                        <span class="time"> 10 </span>
+                        <span class="time"> 11 </span>
+                        <span class="time"> 12 </span>
+                        <span class="time"> 13 </span>
+                        <span class="time"> 14 </span>
+                        <span class="time"> 15 </span>
+                        <span class="time"> 16 </span>
+                        <span class="time"> 17 </span>
+                        <span class="time"> 18 </span>
+                    </div>
+
+                    <div class="sheduler">
+                        <span class="s-item next first"></span>
+                        <span class="s-item next s-blue"></span>
+                        <span class="s-item next s-green"></span>
+                        <span class="s-item next s-pink"></span>
+                        <span class="s-item next"></span>
+                        <span class="s-item next"></span>
+                        <span class="s-item next"></span>
+                        <span class="s-item next s-yellow"></span>
+                        <span class="s-item next"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="main-panel" *ngIf="isApply">
+                <div class="content">
+                    <div class="apply">
+                        <div class="photo-a">
+                            <img style="height: 100%; width: 100%;" src="../../assets/photo5.jpg">
+                        </div>
+
+                        <div class="text-a">
+                            <p>Dan Genteremo wants you to be his Family doctor</p>
+                            <p>Address:  St. Sophers street, 4</p>
+                            <p>Phone:  380584223598</p>
+                            <p>Price:  350$</p>
+                        </div>
+
+                        <div class="answer">
+                            <img style="height:100%; width:35%;" src="../../assets/Checkmark.png">
+                            <img style=" margin-left:60px; height:100%; width:35%;" src="../../assets/Cross.png">
+                        </div>
+                    </div>
+
+                    <div class="apply">
+                        <div class="photo-a">
+                            <img style="height: 100%; width: 100%;" src="../../assets/photo4.jpg">
+                        </div>
+
+                        <div class="text-a">
+                            <p>Ron Herantoers wants you to be his Family doctor</p>
+                            <p>Address:  St. Bernies street, 2</p>
+                            <p>Phone:  380142553487</p>
+                            <p>Price:  280$</p>
+                        </div>
+
+                        <div class="answer">
+                            <img style="height:100%; width:35%;" src="../../assets/Checkmark.png">
+                            <img style=" margin-left:60px; height:100%; width:35%;" src="../../assets/Cross.png">
+                        </div>
+                    </div>
+
+                    <div class="apply">
+                        <div class="photo-a">
+                            <img style="height: 100%; width: 100%;" src="../../assets/photo3.jpg">
+                        </div>
+
+                        <div class="text-a">
+                            <p>Nick Tersenkos wants you to be his Family doctor</p>
+                            <p>Address:  Lyskov Nerdie street, 1</p>
+                            <p>Phone:  380876553218</p>
+                            <p>Price:  400$</p>
+                        </div>
+
+                        <div class="answer">
+                            <img style="height:100%; width:35%;" src="../../assets/Checkmark.png">
+                            <img style=" margin-left:60px; height:100%; width:35%;" src="../../assets/Cross.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="main-panel-m" *ngIf="isManage">
+                <div class="divide-m">
+                    <div class="input-m">
+                        <div id="first" class="element-m this-m">
+                            <p (click)="first()" class="clickable" style="font-weight:600;"> Olivia Frere examination </p>
+                            <p style="margin-bottom:5px !important;"> Start Date:  08/26/1970 </p>
+                            <p style="margin-bottom:5px !important; margin-top:0 !important;"> End Date:  08/26/1970 </p>
+                            <p style="margin-bottom:5px !important; margin-top:0 !important;"> Status:  Finished </p>
+                        </div>
+
+                        <div id="second" class="element-m">
+                            <p (click)="second()" class="clickable" style="font-weight:600;"> Ben Harington examination </p>
+                            <p style="margin-bottom:5px !important;"> Start Date:  05/30/2022 </p>
+                            <p style="margin-bottom:5px !important; margin-top:0 !important;"> End Date:  05/30/2022 </p>
+                            <p style="margin-bottom:5px !important; margin-top:0 !important;"> Status:  Pending </p>
+                        </div>
+
+                        <div id="third" class="element-m">
+                            <p (click)="third()" class="clickable" style="font-weight:600;"> John Berlistas examination </p>
+                            <p style="margin-bottom:5px !important;"> Start Date:  05/24/2022 </p>
+                            <p style="margin-bottom:5px !important; margin-top:0 !important;"> End Date:  05/27/2022 </p>
+                            <p style="margin-bottom:5px !important; margin-top:0 !important;"> Status:  Closed </p>
+                        </div>
+
+                        
+                        <div class="element-m">
+                            <p class="clickable" style="font-weight:600;"> Bern Terasker examination </p>
+                            <p style="margin-bottom:5px !important;"> Start Date:  05/14/2022 </p>
+                            <p style="margin-bottom:5px !important; margin-top:0 !important;"> End Date:  05/16/2022 </p>
+                            <p style="margin-bottom:5px !important; margin-top:0 !important;"> Status:  Closed </p>
+                        </div>
+
+                        
+                        <div class="element-m">
+                            <p class="clickable" style="font-weight:600;"> Nick Franches examination </p>
+                            <p style="margin-bottom:5px !important;"> Start Date:  08/26/1970 </p>
+                            <p style="margin-bottom:5px !important; margin-top:0 !important;"> End Date:  08/26/1970 </p>
+                            <p style="margin-bottom:5px !important; margin-top:0 !important;"> Status:  Closed </p>
+                        </div>
+                    </div>
+                    
+                    <div class="select-m">
+                        <div *ngIf="isSecond" class="text-alert">
+                            Examination hasn`t started yet
+                        </div>
+                        <div *ngIf="!isSecond" class="text-input-m">   
+                            <p>
+                                <button style="margin-top: 0; margin-left: 660px;" (click)='download()' mat-button class="button-inside"> Save & Donwload </button>
+                            </p>
+                            <p style="margin-bottom:5px !important; margin-top:0 !important;">
+                                <mat-form-field>
+                                <input type="text" required matInput placeholder="Number of days" #days>
+                                </mat-form-field>
+                            </p>
+
+                            <p style="margin-bottom:5px !important; margin-top:0 !important;">
+                                <mat-form-field style="width:600px">
+                                <input type="text" required matInput placeholder="Medical diagnosis" #diagnosis>
+                                </mat-form-field>
+                            </p>
+
+                            <p style="margin-bottom:5px !important; margin-top:0 !important;">
+                                <mat-form-field style="width:600px">
+                                <input type="text" required matInput placeholder="Decsription of the diagnosis" #decription>
+                                </mat-form-field>
+                            </p>
+
+                            <p style="margin-bottom:5px !important; margin-top:0 !important;">
+                                <mat-form-field style="width:600px">
+                                <input type="text" required matInput placeholder="Medical advice" #advice>
+                                </mat-form-field>
+                            </p>
+
+                            <p style="margin-bottom:5px !important; margin-top:0 !important;">
+                                <mat-form-field style="width:500px">
+                                <input type="text" required matInput placeholder="Prescription" #prescription>
+                                </mat-form-field>
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="main-panel" *ngIf="isChat">
+                <div class="divide-m">
+                    <div class="input-m">
+                        <div class="element-c this-c">
+                            Nick Franches
+                        </div>
+
+                        <div class="element-c">
+                            Bern Terasker
+                        </div>
+
+                        <div class="element-c">
+                            John Berlistas
+                        </div>
+
+                        <div class="element-c">
+                            Ben Harington
+                        </div>
+
+                        <div class="element-c">
+                            Olivia Frere
+                        </div>
+                    </div>
+
+                    <div class="select-c">
+                        <div class="message-c">
+                            Good morning, where is your place located ?
+                        </div>
+                        <p class="time-c">10:42</p>
+
+                        <div class="message-c my-c">
+                            Hello. Do you mean my office or a hospital ?
+                        </div>
+                        <p class="time-c my-c-t">10:52</p>
+
+                        <div class="message-c">
+                            Your office.
+                        </div>
+                        <p class="time-c" >10:54</p>
+
+                        <div class="message-c">
+                            I just can`t find the right floor and the right coridor
+                        </div>
+                        <p class="time-c">10:54</p>
+
+                        <div class="message-c message-c my-c">
+                            Go on the ground floor, I will meet you there
+                        </div>
+                        <p class="time-c my-c-t">10:56</p>
+
+                        <div class="message-c message-c">
+                            Okay
+                        </div>
+                        <p class="time-c">10:56</p>
+
+                        <div class="message-c message-c">
+                            I am here
+                        </div>
+                        <p class="time-c">11:01</p>
+
+                        <div class="message-c message-c my-c">
+                            Are you near the Pharmacy? I can meet you there
+                        </div>
+                        <p class="time-c my-c-t">11:04</p>
+
+                        <div class="message-c message-c">
+                            No, but I will be there in a few seconds
+                        </div>
+                        <p class="time-c">11:04</p>
+
+                        <div class="message-c message-c my-c">
+                            I am waiting you near the pharmacy. Tell me when you will be here
+                        </div>
+                        <p class="time-c my-c-t">11:05</p>
+
+                        <div class="message-c message-c">
+                            I think I can see you
+                        </div>
+                        <p class="time-c">11:05</p>              
+
+                        <div *ngIf="isMessage">
+                        <div class="message-c message-c my-c">
+                            Thank you for your time and good luck!
+                        </div>
+                        <p class="time-c my-c-t">11:05</p>
+                        </div>
+                        
+                        <div class="input-c">
+                            <p >
+                                <mat-form-field style="width: 400px;">
+                                  <input type="text" required matInput placeholder="Your message" #message>
+                                </mat-form-field>
+
+                                <button (click)='messageNew()' mat-button class="button-c"> Send </button>
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="user-panel">
+                <div class="title-u">
+                    Your Clients
+                </div>
+
+                <div class="image-u">
+                    <img style="height: 100%; width: 100%;" src="../../assets/4.png">
+                </div>
+                <div class="text-u">
+                    Ben Harington
+                </div>
+
+                <div class="image-u">
+                    <img style="height: 100%; width: 100%;" src="../../assets/photo1.jpg">
+                </div>
+                <div class="text-u">
+                    Nick Franches
+                </div>
+
+                <div class="image-u">
+                    <img style="height: 100%; width: 100%;" src="../../assets/photo2.jpg">
+                </div>
+                <div class="text-u">
+                    John Berlistas
+                </div>
+
+                <div class="image-u">
+                    <img style="height: 100%; width: 100%;" src="../../assets/photo3.jpg">
+                </div>
+
+                <div class="text-u">
+                    Bern Teraskers
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

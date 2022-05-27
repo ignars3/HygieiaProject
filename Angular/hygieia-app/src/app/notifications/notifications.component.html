@@ -3,12 +3,12 @@
     <div *ngFor="let element of notifications">
         <div *ngIf="element.status" class="item" >
             <div class="text title">{{element.title}}</div>
-            <span class="text">{{element.description}}</span>
+            <p class="text">{{element.description}}</p>
         </div>
 
         <div *ngIf="!element.status" class="item" >
             <div *ngIf="!element.status" class="text-old title">{{element.title}}</div>
-            <span *ngIf="!element.status" class="text-old">{{element.description}}</span>
+            <p *ngIf="!element.status" class="text-old">{{element.description}}</p>
         </div>
 
     </div>

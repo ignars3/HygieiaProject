@@ -1,4 +1,66 @@
 
+<div style="height: 200%; width: 100%; position: absolute; z-index: 1200;" *ngIf="isRequest">
+    <div class="main-n">
+        <div class="box-n">
+
+            <div style="z-index: 1400; margin-top:30px;" class="flex-n">
+                    <mat-label style="font-size: 22px;">Select Examination</mat-label>
+                    <select (change)="showDrug()" class="custom-select" name="food">
+                      <option selected>-</option>
+                      <option value="3">Examination 3</option>
+                      <option value="2">Examination 2</option>
+                      <option value="1">Examination 1</option>
+                    </select>
+            </div>
+
+            <div style="margin-left: 35%; margin-top: 40px; height: 290px; width: 35%;" *ngIf="isExit">
+                <img style="height: 100%; width: 100%;" src="../../assets/check1.png">
+            </div>
+
+            <div class="flex-n" *ngIf="isDrug && !isExit">
+        <div class="element-n">
+            <div class="first-area-n">
+                <img class="photo-n" src="../../assets/drug1.jpg">
+                <div class="rating-n">
+                    Aspirin
+                </div>
+            </div>
+        </div>
+
+        <div class="element-n">
+            <div class="first-area-n">
+                <img class="photo-n" src="../../assets/drug6.jpg">
+                <div class="rating-n">
+                    Vitamin B12
+                </div>
+            </div>
+        </div>
+
+        <div class="element-n">
+            <div class="first-area-n">
+                <img class="photo-n" src="../../assets/drug7.jpg">
+                <div class="rating-n">
+                    Complex B6
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="center-n">
+        <button (click)='request()' mat-button style="margin-top:30px; height: 60px; width: 100px;margin-bottom:40px;" class="button-wrap">
+            Back
+        </button>
+        <button (click)='requestTwo()' mat-button style="height: 60px; width: 180px;margin-left: 40px; margin-top: 30px; margin-bottom:40px;" class="button-wrap-details">
+            Accept & Sell
+        </button>
+    </div>
+    </div>
+    </div>
+</div>
+
+<div class="absolute-blur" *ngIf="isRequest">
+
+</div>
+
 <div class="fill-header">
     <div class="fill-image"></div>
 </div>
@@ -90,15 +152,18 @@
 
                     <div class="second-area">
                         <p class="title">Bern Francher</p>
-                        <p class="text"> Phone: 380731452845 </p>
-                        <p class="text"> Address: Great Lery`s street, 45 </p>
-                        <p class="text"> Family doctor: Ben Genister </p>
+                        <p class="text common-p"> Phone: 380731452845 </p>
+                        <p class="text common-p without-p"> Address: Great Lery`s street, 45 </p>
+                        <p class="text common-p without-p"> Family doctor: Ben Genister </p>
                         <div class="buttons">
                             <button (click)='details()' mat-button class="button-wrap-details">
                                 Contact Family Doctor
                             </button>
                             <button (click)='request()' mat-button class="button-wrap">
                                 Request More Info
+                            </button>
+                            <button (click)='request()' mat-button style="margin-top: 15px; margin-left: 50px;" class="button-wrap-details">
+                                Get Receipt
                             </button>
                         </div>
                     </div>
@@ -115,15 +180,18 @@
 
                     <div class="second-area">
                         <p class="title">Terry Mentonson</p>
-                        <p class="text"> Phone: 380731452845 </p>
-                        <p class="text"> Address: Westminster, 2 </p>
-                        <p class="text"> Family doctor: Jaime Haney </p>
+                        <p class="text common-p"> Phone: 380731452845 </p>
+                        <p class="text common-p without-p"> Address: Westminster, 2 </p>
+                        <p class="text common-p without-p"> Family doctor: Jaime Haney </p>
                         <div class="buttons">
                             <button (click)='details()' mat-button class="button-wrap-details">
                                 Contact Family Doctor
                             </button>
                             <button (click)='request()' mat-button class="button-wrap">
                                 Request More Info
+                            </button>
+                            <button (click)='request()' mat-button style="margin-top: 15px; margin-left: 50px;" class="button-wrap-details">
+                                Get Receipt
                             </button>
                         </div>
                     </div>
@@ -140,15 +208,18 @@
 
                     <div class="second-area">
                         <p class="title">Jane Fiechero</p>
-                        <p class="text"> Phone: 380731452845 </p>
-                        <p class="text"> Address: Treid The First, 24b </p>
-                        <p class="text"> Family doctor: Macie Dalton </p>
+                        <p class="text common-p"> Phone: 380731452845 </p>
+                        <p class="text common-p without-p"> Address: Treid The First, 24b </p>
+                        <p class="text common-p without-p"> Family doctor: Macie Dalton </p>
                         <div class="buttons">
                             <button (click)='details()' mat-button class="button-wrap-details">
                                 Contact Family Doctor
                             </button>
                             <button (click)='request()' mat-button class="button-wrap">
                                 Request More Info
+                            </button>
+                            <button (click)='request()' mat-button style="margin-top: 15px; margin-left: 50px;" class="button-wrap-details">
+                                Get Receipt
                             </button>
                         </div>
                     </div>
@@ -165,15 +236,18 @@
 
                     <div class="second-area">
                         <p class="title">Azi Nersov</p>
-                        <p class="text"> Phone: 380731452845 </p>
-                        <p class="text"> Address: Holent street, 1</p>
-                        <p class="text"> Family doctor: Janet Haynes </p>
+                        <p class="text common-p"> Phone: 380731452845 </p>
+                        <p class="text common-p without-p"> Address: Holent street, 1</p>
+                        <p class="text common-p without-p"> Family doctor: Janet Haynes </p>
                         <div class="buttons">
                             <button (click)='details()' mat-button class="button-wrap-details">
                                 Contact Family Doctor
                             </button>
                             <button (click)='request()' mat-button class="button-wrap">
                                 Request More Info
+                            </button>
+                            <button (click)='request()' mat-button style="margin-top: 15px; margin-left: 50px;" class="button-wrap-details">
+                                Get Receipt
                             </button>
                         </div>
                     </div>
@@ -190,15 +264,18 @@
 
                     <div class="second-area">
                         <p class="title">Tom Renosky</p>
-                        <p class="text"> Phone: 380731452845 </p>
-                        <p class="text"> Address: Tern Ben street, 1 </p>
-                        <p class="text"> Family doctor: Nickolas Pratt</p>
+                        <p class="text common-p"> Phone: 380731452845 </p>
+                        <p class="text common-p without-p"> Address: Tern Ben street, 1 </p>
+                        <p class="text common-p without-p"> Family doctor: Nickolas Pratt</p>
                         <div class="buttons">
                             <button (click)='details()' mat-button class="button-wrap-details">
                                 Contact Family Doctor
                             </button>
                             <button (click)='request()' mat-button class="button-wrap">
                                 Request More Info
+                            </button>
+                            <button (click)='request()' mat-button style="margin-top: 15px; margin-left: 50px;" class="button-wrap-details">
+                                Get Receipt
                             </button>
                         </div>
                     </div>

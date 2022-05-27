@@ -1,4 +1,54 @@
 
+
+<div style="height: 200%; width: 100%; position: absolute; z-index: 1200;" *ngIf="isRequest">
+    <div class="center-m">
+        <mat-card>
+          <mat-card-title class="center-general">Meeting Request Form</mat-card-title>
+          <mat-card-content *ngIf="!isExit">
+            <div class="text-m">
+
+              <p>
+                <mat-form-field>
+                  <input type="text" required matInput placeholder="Date" #date>
+                </mat-form-field>
+              </p>
+
+              <p>
+                <mat-form-field>
+                  <input type="text" required matInput placeholder="Time" #time>
+                </mat-form-field>
+              </p>
+
+              <p>
+                <mat-form-field style="width: 300px;">
+                  <input type="text" required matInput placeholder="Main Problem" #reason>
+                </mat-form-field>
+              </p>            
+
+              <p>
+                <mat-form-field style="width: 300px;">
+                  <input type="text" required matInput placeholder="Message" #reason>
+                </mat-form-field>
+              </p> 
+
+              <div class="button center-general">
+                <button (click)='applyMeeting()' mat-button class="button-wrap-c"> Apply </button>
+              </div>
+
+            </div>
+          </mat-card-content>
+
+          <div style="font-size: 26px;margin-top: 200px; margin-bottom: 200px" class="center-general" *ngIf="isExit">
+            Request has been created. Please wait until doctor will respond
+          </div>
+        </mat-card>
+      </div>
+</div>>
+
+<div class="absolute-blur" *ngIf="isRequest">
+
+</div>
+
 <div class="fill-header">
     <div class="fill-image"></div>
 </div>

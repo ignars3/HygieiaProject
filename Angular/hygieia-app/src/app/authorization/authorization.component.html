@@ -9,45 +9,60 @@
           <mat-card-title>{{ headerText }}</mat-card-title>
           <mat-card-content>
             <div>
-              <p *ngIf="!isLogin">
+
+              <p style="margin-top: 20px;" *ngIf="isVerify">
+                We have sent a message with a verification code to your Email
+              </p>
+
+              <p style="margin-left: 31%;" *ngIf="isVerify">
+                Please input it in the box
+              </p>
+
+              <p *ngIf="isVerify">
+                <mat-form-field>
+                  <input type="text" required matInput placeholder="Code" #code>
+                </mat-form-field>
+              </p>
+
+              <p *ngIf="!isLogin && !isVerify">
                 <mat-form-field>
                   <input type="text" required matInput placeholder="First Name" #firstName>
                 </mat-form-field>
               </p>
               
-              <p *ngIf="!isLogin">
+              <p *ngIf="!isLogin && !isVerify">
                 <mat-form-field>
                   <input type="text" required matInput placeholder="Second Name" #secondName>
                 </mat-form-field>
               </p>
 
-              <p *ngIf="!isLogin">
+              <p *ngIf="!isLogin && !isVerify">
                 <mat-form-field>
-                  <input type="text" required matInput placeholder="Third Name" #thirdName>
+                  <input type="text" matInput placeholder="Third Name" #thirdName>
                 </mat-form-field>
               </p>
 
-              <p *ngIf="!isLogin">
+              <p *ngIf="!isLogin && !isVerify">
                 <mat-form-field>
                   <input type="text" required matInput placeholder="Phone" #phone>
                 </mat-form-field>
               </p>
 
-              <p *ngIf="!isLogin">
+              <p *ngIf="!isLogin && !isVerify">
                 <mat-form-field>
                   <input type="text" required matInput placeholder="Address" #address>
                 </mat-form-field>
               </p>
 
-              <p>
+              <p *ngIf="!isVerify">
                 <mat-form-field>
-                  <input type="text" required matInput placeholder="Email" #username>
+                  <input type="text" required matInput placeholder="Email" name="username" #username>
                 </mat-form-field>
               </p>
 
-              <p>
+              <p *ngIf="!isVerify">
                 <mat-form-field>
-                  <input type="password" required matInput placeholder="Password" #password>
+                  <input type="password" required matInput placeholder="Password" name="password" #password>
                 </mat-form-field>
               </p>
 
@@ -55,24 +70,28 @@
                 {{ errorMessage }}
               </p>
 
-              <div class="button" *ngIf="isLogin">
-                <button (click)='login(username.value, password.value)' mat-button class="button-wrap">{{ authNotText }}</button>
+              <div class="button" *ngIf="isLogin && !isVerify">
+                <button (click)='login()' mat-button class="button-wrap">{{ authNotText }}</button>
               </div>
               
-              <div class="button" *ngIf="!isLogin">
-                <button (click)='register(username.value, password.value)' mat-button class="button-wrap">{{ authNotText }}</button>
+              <div class="button" *ngIf="!isLogin && !isVerify">
+                <button (click)='register()' mat-button class="button-wrap">{{ authNotText }}</button>
+              </div>
+
+              <div class="button" *ngIf="!isLogin && isVerify">
+                <button (click)='applyRegister()' mat-button class="button-wrap"> Apply </button>
               </div>
 
             </div>
           </mat-card-content>
         </mat-card>
 
-      <div class="message-box">
-        <p class="message-text">
-          <span>{{ messageText }}</span>
-          <button mat-button class="change-text" (click)="changeLogin()"> {{ authText }}</button>
-        </p>
+        <div class="message-box">
+          <p class="message-text">
+            <span>{{ messageText }}</span>
+            <button mat-button class="change-text" (click)="changeLogin()"> {{ authText }}</button>
+          </p>
+        </div>
       </div>
     </div>
-  </div>
 </div>
